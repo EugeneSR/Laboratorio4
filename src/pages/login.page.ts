@@ -17,7 +17,7 @@ export class LoginPage extends BasePage {
     }
 
     async Login(email: string, password: string) {
-        
+
         //--------Login----------------
         const expct = String(process.env.EMAIL);
         await this.driver.Page.click(this.selectOptionLogin);
@@ -32,6 +32,7 @@ export class LoginPage extends BasePage {
         //--------Home-------------------
         const home = String(process.env.HOME);
         await this.driver.Page.goto(home);
+
         this.scroll();
         //--------Inf. Personal----------------
         await this.driver.Page.waitForTimeout(300);
@@ -53,7 +54,7 @@ export class LoginPage extends BasePage {
         //*------------------End----------------------*/
 
     }
-
+    
     async scroll() {
         /*********************Scroll ***********************/
         let selectLogin = this.driver.Page.locator("#block_top_menu");
@@ -64,8 +65,7 @@ export class LoginPage extends BasePage {
             await this.driver.Page.mouse.wheel(0, y);
         }
         /*********************--END--***********************/
-
     }
 
- 
+
 }

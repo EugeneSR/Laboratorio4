@@ -11,5 +11,9 @@ export abstract class BasePage {
     async navigateTo(url: string){
          await this.driver.Page.goto(url, { waitUntil: 'networkidle' });
     }
+ 
+   
+
+    
 
 }
