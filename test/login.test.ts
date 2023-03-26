@@ -22,13 +22,14 @@ describe('Feature My Store', () => {
     });
   
     it('Go To Page', async () => {
-        await loginPage.navigateTo();
+        const url = String(process.env.URL);
+        await loginPage.navigateTo(url);
     });
 
     it('Login: the user is successfully logged in', async () => {
         const email = String(process.env.EMAIL);
-        const pass = String(process.env.PASS);
-        await loginPage.Login(email, pass);
+        const password = String(process.env.PASS);
+        await loginPage.Login(email, password);
 
     });
 });

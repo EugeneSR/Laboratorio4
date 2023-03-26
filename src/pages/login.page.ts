@@ -8,7 +8,7 @@ export class LoginPage extends BasePage {
     /************Locators***************************/
 
     private selectOptionLogin: string = ".login";
-    private username: string = '#email';
+    private email: string = '#email';
     private password: string = '#passwd';
     private loginButton: string = '#SubmitLogin';
 
@@ -16,14 +16,14 @@ export class LoginPage extends BasePage {
         super();
     }
 
-    async Login(username: string, password: string) {
+    async Login(email: string, password: string) {
         
         //--------Login----------------
         const expct = String(process.env.EMAIL);
         await this.driver.Page.click(this.selectOptionLogin);
         this.scroll();
         await this.driver.Page.waitForTimeout(200);
-        await this.driver.Page.fill(this.username, username);
+        await this.driver.Page.fill(this.email, email);
         await this.driver.Page.fill(this.password, password);
         await this.driver.Page.waitForTimeout(200);
         await this.driver.Page.click(this.loginButton);
@@ -43,13 +43,13 @@ export class LoginPage extends BasePage {
 
         this.scroll();
         await this.driver.Page.waitForTimeout(2000);
-        let emails = await this.driver.Page.locator(`#email`).inputValue();
+        let emailInf = await this.driver.Page.locator(`#email`).inputValue();
 
-        console.log(emails);
+        console.log(emailInf);
         console.log(expct);
 
         //*------------------Expect------------------*/
-        expect(expct).toEqual(emails);
+        expect(expct).toEqual(emailInf);
         //*------------------End----------------------*/
 
     }
