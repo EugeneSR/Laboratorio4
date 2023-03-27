@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --forceExitCoverage",
+    "test": "jest ",
     "test:login": "jest login.test.ts"
   },
   "keywords": [],

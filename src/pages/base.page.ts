@@ -7,13 +7,7 @@ export abstract class BasePage {
     constructor(){
         this.driver = driverInstance;
     }
-
     async navigateTo(url: string){
          await this.driver.Page.goto(url, { waitUntil: 'networkidle' });
     }
- 
-   
-
-    
-
 }

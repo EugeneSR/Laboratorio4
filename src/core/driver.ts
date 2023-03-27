@@ -27,6 +27,7 @@ export class Driver {
     get Page(): Page {
         return this.page;
     }
+
 }
 
 export const driverInstance = new Driver();
